@@ -15,4 +15,5 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-Enjoy!
+CDK Internally create Cloudformation Template and execute them.
+Where as terraform will intaract with AWS APIs to create resources

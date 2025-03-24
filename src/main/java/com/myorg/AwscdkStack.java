@@ -1,5 +1,6 @@
 package com.myorg;
 
+import software.amazon.awscdk.services.s3.Bucket;
 import software.constructs.Construct;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
@@ -14,11 +15,10 @@ public class AwscdkStack extends Stack {
     public AwscdkStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
 
-        // The code that defines your stack goes here
-
-        // example resource
-        // final Queue queue = Queue.Builder.create(this, "AwscdkQueue")
-        //         .visibilityTimeout(Duration.seconds(300))
-        //         .build();
+        // Create an S3 Bucket
+        Bucket myBucket = Bucket.Builder.create(this, "MyCdkBucket")
+                .bucketName("my-pk-raju-cdk-bucket-example")
+                .versioned(false)
+                .build();
     }
 }
